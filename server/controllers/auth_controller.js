@@ -39,7 +39,30 @@ module.exports = {
 			return res.status(401).send('Incorrect username or password');
 		}
 	},
-	// getDetails: async (req, res) => {},
-	// getUser: async (req, res) => {},
-	// logout: async (req, res) => {},
+	getDetails: async (req, res) => {
+		const db = req.app.get('db');
+		const { session } = req;
+		if (session.user) {
+			const details = await db.get_user_details({ id: session.user.id });
+			const { first_name, email, balance, user_id } = details[0];
+			return res.status(200).send({
+				first_name,
+				email,
+				balance,
+				user_id,
+				username: session.user.username,
+			});
+		}
+		return res.status(401).send('Please log in to your account');
+	},
+	getUser: (req, res) => {
+		const { session } = req;
+		if (session.user) {
+			return res.status(200).send(session.user);
+		}
+	},
+	logout: (req, res) => {
+		req.session.destroy();
+		res.sendStatus(200);
+	},
 };
