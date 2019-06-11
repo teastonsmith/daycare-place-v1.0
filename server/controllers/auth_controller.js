@@ -65,4 +65,10 @@ module.exports = {
 		req.session.destroy();
 		res.sendStatus(200);
 	},
+	updateUser: (req,res) => {
+
+	},
+	deleteUser: (req, res) => {
+		
+	}
 };

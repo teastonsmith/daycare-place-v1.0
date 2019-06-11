@@ -31,3 +31,5 @@ app.post('/auth/login', auth_ctrl.login);
 app.get('/auth/details', auth_ctrl.getDetails);
 app.get('/auth/user', auth_ctrl.getUser);
 app.get('/auth/logout', auth_ctrl.logout);
+app.put('/auth/user', auth_ctrl.updateUser)
+app.delete('/auth/user', auth_ctrl.deleteUser)
