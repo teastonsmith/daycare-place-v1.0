@@ -1,16 +1,41 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from 'axios';
+import { updateUser } from '../../redux/reducer';
+import { connect } from 'react-redux';
 
-export default class Login extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
+class Login extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			username: '',
+			password: '',
+		};
   }
-  
-  render() {
-    return (
-      <div>
-        <p>Login</p>
-      </div>
-    )
-  }
+
+  componentDidMount() {
+		axios.get('/auth/user').then((res) => {
+			this.props.updateUser(res.data)
+			this.props.history.push('/details')
+		})
+		this.props.id && this.props.history.push('/details')
+	}
+
+	render() {
+		return (
+			<div>
+
+			</div>
+		);
+	}
 }
+
+function mapStateToProps(reduxState) {
+  return reduxState
+}
+
+export default connect(
+  mapStateToProps, {updateUser}
+)(Login)
+
+{/* <LoginForm />
+<RegisterForm /> */}

@@ -20,4 +20,6 @@ export default (
   </Switch>
 )
 // <Route exact path='/' component={Home}/>
-{/* <Route path='/details' component={Details}/> */}
+// <Route path='/details' component={Details}/>
+
+//routing - recording 8, around 30 minutes
