@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
-export class UserProfile extends Component {
+export default class UserProfile extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+  
   render() {
     return (
       <div>
@@ -9,5 +14,3 @@ export class UserProfile extends Component {
     )
   }
 }
-
-export default UserProfile

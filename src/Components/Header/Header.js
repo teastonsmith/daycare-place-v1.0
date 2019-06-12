@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-export class Header extends Component {
-  render() {
-    return (
-      <div>
-        <p>Header</p>
-      </div>
-    )
-  }
+export default function Header() {
+  return (
+    <div>
+      <p>Header</p>
+    </div>
+  )
 }
-
-export default Header

@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-export default function Store() {
-  return (
-    <div>
-      <p>Store</p>
-    </div>
-  )
+export default class Store extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
+
+	render() {
+		return (
+			<div>
+				<p>Store</p>
+			</div>
+		);
+	}
 }

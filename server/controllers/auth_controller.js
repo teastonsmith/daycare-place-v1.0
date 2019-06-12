@@ -22,6 +22,7 @@ module.exports = {
 		};
 		res.status(200).send(session.user);
 	},
+
 	login: async (req, res) => {
 		const { username, password } = req.body;
 		const db = req.app.get('db');
@@ -39,6 +40,7 @@ module.exports = {
 			return res.status(401).send('Incorrect username or password');
 		}
 	},
+
 	getDetails: async (req, res) => {
 		const db = req.app.get('db');
 		const { session } = req;
@@ -55,19 +57,23 @@ module.exports = {
 		}
 		return res.status(401).send('Please log in to your account');
 	},
+
 	getUser: (req, res) => {
 		const { session } = req;
 		if (session.user) {
 			return res.status(200).send(session.user);
 		}
 	},
+
 	logout: (req, res) => {
 		req.session.destroy();
 		res.sendStatus(200);
 	},
+
 	updateUser: (req,res) => {
 
 	},
+	
 	deleteUser: (req, res) => {
 		
 	}
