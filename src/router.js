@@ -11,11 +11,13 @@ import { Switch, Route } from 'react-router-dom'
 // import AdminProfile from './Components/Profiles/AdminProfile'
 
 import Login from './Components/Profiles/Login'
+import Carousel from './Components/Header/Carousel'
 // import Details from './Components/Details'
 
 export default (
   <Switch>
     <Route path='/login' component={Login}/>
+    <Route path='/Carousel' component={Carousel}/>
 
   </Switch>
 )

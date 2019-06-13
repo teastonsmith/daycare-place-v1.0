@@ -1,15 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Navbar = () => {
-  return(
-    <nav>
-      <Link to='/'>Home</Link>
-      <Link to='/login'>Login</Link>
-      <span>{}</span>
-    </nav>
-  )
-}
+const Navbar = ({ username }) => {
+	return (
+		<nav>
+			<Link to='/'>Home</Link>
+			<Link to='/login'>Login</Link>
+			<span>{}</span>
+		</nav>
+	);
+};
 
-export default Navbar
+const mapStateToProps = reduxState => {
+	return {
+		username: reduxState.username,
+	};
+};
+
+export default connect(mapStateToProps)(Navbar);

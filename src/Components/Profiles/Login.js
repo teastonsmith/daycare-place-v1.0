@@ -23,7 +23,7 @@ class Login extends Component {
 	render() {
 		return (
 			<div>
-
+<p>Login</p>
 			</div>
 		);
 	}
@@ -36,6 +36,3 @@ function mapStateToProps(reduxState) {
 export default connect(
   mapStateToProps, {updateUser}
 )(Login)
-
-{/* <LoginForm />
-<RegisterForm /> */}

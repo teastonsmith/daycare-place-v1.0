@@ -1,8 +1,15 @@
 require('dotenv').config();
+
 const express = require('express'),
 	session = require('express-session'),
 	massive = require('massive'),
-	auth_ctrl = require('./controllers/auth_controller');
+	auth_ctrl = require('./controllers/auth_controller'),
+	jquery = require('jquery'),
+	bootstrap = require('bootstrap');
+
+// Expose jQuery to the global object
+window.jquery = window.$ = jquery;
+
 const app = express();
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 

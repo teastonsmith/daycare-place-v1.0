@@ -1,4 +1,5 @@
 import React from 'react';
+import './reset.css'
 import './App.css';
 
 // routing imports
@@ -11,15 +12,19 @@ import {connect} from 'react-redux'
 
 // import navbar component
 import Navbar from './Components/Header/Navbar'
+import Carousel from './Components/Header/Carousel'
 
 
 const App = () => {
   return (
+
 <HashRouter>
 {/* referencing Navbar component */}
   <Navbar/>
+  <Carousel/>
   {router}
 </HashRouter>
+
   );
 }
 
